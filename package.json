@@ -1,22 +1,17 @@
 {
   "name": "photobox",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cookingeek/photobox.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cookingeek/photobox/issues"
-  },
-  "homepage": "https://github.com/cookingeek/photobox#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "gphoto2": "^0.3.2",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "^3.0.0"
   }
 }
