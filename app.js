@@ -4,9 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+global.properties = PropertiesReader('./config/config.properties');
+
 var fs = require('fs');
-var gphoto2 = require('gphoto2');
-var GPhoto = new gphoto2.GPhoto2();
+//var gphoto2 = require('gphoto2');
+//var GPhoto = new gphoto2.GPhoto2();
 
 var indexRouter = require('./routes/index');
 
@@ -40,21 +42,21 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-GPhoto.setLogLevel(1);
-GPhoto.on('log', function (level, domain, message) {
-  console.log(domain, message);
-});
+// GPhoto.setLogLevel(1);
+// GPhoto.on('log', function (level, domain, message) {
+//   console.log(domain, message);
+// });
  
-// List cameras / assign list item to variable to use below options
-GPhoto.list(function (list) {
-  if (list.length === 0) return;
-  var camera = list[0];
-  console.log('Found', camera.model);
+// // List cameras / assign list item to variable to use below options
+// GPhoto.list(function (list) {
+//   if (list.length === 0) return;
+//   var camera = list[0];
+//   console.log('Found', camera.model);
 
-  camera.getConfig(function (er, settings) {
-    console.log(settings);
-  });
+//   camera.getConfig(function (er, settings) {
+//     console.log(settings);
+//   });
 
-  
-});
+
+// });
 module.exports = app;
